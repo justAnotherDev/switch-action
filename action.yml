@@ -1,0 +1,239 @@
+name: 'Switch Action'
+description: 'Allow switch/case logic'
+inputs:
+  expression:
+    description: 'The expression to evaluate.'
+    required: true
+  case_a:
+    description: 'The first case to handle.'
+    required: true
+  case_b:
+    description: 'The second case to handle.'
+    required: false
+  case_c:
+    description: 'The third case to handle.'
+    required: false
+  case_d:
+    description: 'The fourth case to handle.'
+    required: false
+  case_e:
+    description: 'The fifth case to handle.'
+    required: false
+  case_f:
+    description: 'The sixth case to handle.'
+    required: false
+  case_g:
+    description: 'The seventh case to handle.'
+    required: false
+  case_h:
+    description: 'The eighth case to handle.'
+    required: false
+  case_i:
+    description: 'The ninth case to handle.'
+    required: false
+  case_j:
+    description: 'The tenth case to handle.'
+    required: false
+  case_k:
+    description: 'The eleventh case to handle.'
+    required: false
+  case_l:
+    description: 'The twelfth case to handle.'
+    required: false
+  case_m:
+    description: 'The thirteenth case to handle.'
+    required: false
+  case_n:
+    description: 'The fourteenth case to handle.'
+    required: false
+  case_o:
+    description: 'The fifteenth case to handle.'
+    required: false
+  case_p:
+    description: 'The sixteenth case to handle.'
+    required: false
+  case_q:
+    description: 'The seventeenth case to handle.'
+    required: false
+  case_r:
+    description: 'The eighteenth case to handle.'
+    required: false
+  case_s:
+    description: 'The nineteenth case to handle.'
+    required: false
+  case_t:
+    description: 'The twentieth case to handle.'
+    required: false
+  case_u:
+    description: 'The twenty-first case to handle.'
+    required: false
+  case_v:
+    description: 'The twenty-second case to handle.'
+    required: false
+  case_w:
+    description: 'The twenty-third case to handle.'
+    required: false
+  case_x:
+    description: 'The twenty-fourth case to handle.'
+    required: false
+  case_y:
+    description: 'The second-fifth case to handle.'
+    required: false
+  case_z:
+    description: 'The twenty-sixth case to handle.'
+    required: false
+  statement_a:
+    description: 'The first statement to handle.'
+    required: true
+  statement_b:
+    description: 'The second statement to handle.'
+    required: false
+  statement_c:
+    description: 'The third statement to handle.'
+    required: false
+  statement_d:
+    description: 'The fourth statement to handle.'
+    required: false
+  statement_e:
+    description: 'The fifth statement to handle.'
+    required: false
+  statement_f:
+    description: 'The sixth statement to handle.'
+    required: false
+  statement_g:
+    description: 'The seventh statement to handle.'
+    required: false
+  statement_h:
+    description: 'The eighth statement to handle.'
+    required: false
+  statement_i:
+    description: 'The ninth statement to handle.'
+    required: false
+  statement_j:
+    description: 'The tenth statement to handle.'
+    required: false
+  statement_k:
+    description: 'The eleventh statement to handle.'
+    required: false
+  statement_l:
+    description: 'The twelfth statement to handle.'
+    required: false
+  statement_m:
+    description: 'The thirteenth statement to handle.'
+    required: false
+  statement_n:
+    description: 'The fourteenth statement to handle.'
+    required: false
+  statement_o:
+    description: 'The fifteenth statement to handle.'
+    required: false
+  statement_p:
+    description: 'The sixteenth statement to handle.'
+    required: false
+  statement_q:
+    description: 'The seventeenth statement to handle.'
+    required: false
+  statement_r:
+    description: 'The eighteenth statement to handle.'
+    required: false
+  statement_s:
+    description: 'The nineteenth statement to handle.'
+    required: false
+  statement_t:
+    description: 'The twentieth statement to handle.'
+    required: false
+  statement_u:
+    description: 'The twenty-first statement to handle.'
+    required: false
+  statement_v:
+    description: 'The twenty-second statement to handle.'
+    required: false
+  statement_w:
+    description: 'The twenty-third statement to handle.'
+    required: false
+  statement_x:
+    description: 'The twenty-fourth statement to handle.'
+    required: false
+  statement_y:
+    description: 'The second-fifth statement to handle.'
+    required: false
+  statement_z:
+    description: 'The twenty-sixth statement to handle.'
+    required: false
+  default:
+    description: 'The statement to use when a matching case is not found.'
+    required: false
+outputs:
+  value: 
+    description: 'The matching statement.'
+    value: ${{ steps.value.outputs.value }}
+runs:
+  using: "composite"
+  steps: 
+    - run: |
+        echo "switch ${{ inputs.expression }} {"
+        if [[ "${{ inputs.case_a }}" ]]; then echo -e "  case ${{ inputs.case_a }}:\n    return \"${{ inputs.statement_a }}\""; fi
+        if [[ "${{ inputs.case_b }}" ]]; then echo -e "  case ${{ inputs.case_b }}:\n    return \"${{ inputs.statement_b }}\""; fi
+        if [[ "${{ inputs.case_c }}" ]]; then echo -e "  case ${{ inputs.case_c }}:\n    return \"${{ inputs.statement_c }}\""; fi
+        if [[ "${{ inputs.case_d }}" ]]; then echo -e "  case ${{ inputs.case_d }}:\n    return \"${{ inputs.statement_d }}\""; fi
+        if [[ "${{ inputs.case_e }}" ]]; then echo -e "  case ${{ inputs.case_e }}:\n    return \"${{ inputs.statement_e }}\""; fi
+        if [[ "${{ inputs.case_f }}" ]]; then echo -e "  case ${{ inputs.case_f }}:\n    return \"${{ inputs.statement_f }}\""; fi
+        if [[ "${{ inputs.case_g }}" ]]; then echo -e "  case ${{ inputs.case_g }}:\n    return \"${{ inputs.statement_g }}\""; fi
+        if [[ "${{ inputs.case_h }}" ]]; then echo -e "  case ${{ inputs.case_h }}:\n    return \"${{ inputs.statement_h }}\""; fi
+        if [[ "${{ inputs.case_i }}" ]]; then echo -e "  case ${{ inputs.case_i }}:\n    return \"${{ inputs.statement_i }}\""; fi
+        if [[ "${{ inputs.case_j }}" ]]; then echo -e "  case ${{ inputs.case_j }}:\n    return \"${{ inputs.statement_j }}\""; fi
+        if [[ "${{ inputs.case_k }}" ]]; then echo -e "  case ${{ inputs.case_k }}:\n    return \"${{ inputs.statement_k }}\""; fi
+        if [[ "${{ inputs.case_l }}" ]]; then echo -e "  case ${{ inputs.case_l }}:\n    return \"${{ inputs.statement_l }}\""; fi
+        if [[ "${{ inputs.case_m }}" ]]; then echo -e "  case ${{ inputs.case_m }}:\n    return \"${{ inputs.statement_m }}\""; fi
+        if [[ "${{ inputs.case_n }}" ]]; then echo -e "  case ${{ inputs.case_n }}:\n    return \"${{ inputs.statement_n }}\""; fi
+        if [[ "${{ inputs.case_o }}" ]]; then echo -e "  case ${{ inputs.case_o }}:\n    return \"${{ inputs.statement_o }}\""; fi
+        if [[ "${{ inputs.case_p }}" ]]; then echo -e "  case ${{ inputs.case_p }}:\n    return \"${{ inputs.statement_p }}\""; fi
+        if [[ "${{ inputs.case_q }}" ]]; then echo -e "  case ${{ inputs.case_q }}:\n    return \"${{ inputs.statement_q }}\""; fi
+        if [[ "${{ inputs.case_r }}" ]]; then echo -e "  case ${{ inputs.case_r }}:\n    return \"${{ inputs.statement_r }}\""; fi
+        if [[ "${{ inputs.case_s }}" ]]; then echo -e "  case ${{ inputs.case_s }}:\n    return \"${{ inputs.statement_s }}\""; fi
+        if [[ "${{ inputs.case_t }}" ]]; then echo -e "  case ${{ inputs.case_t }}:\n    return \"${{ inputs.statement_t }}\""; fi
+        if [[ "${{ inputs.case_u }}" ]]; then echo -e "  case ${{ inputs.case_u }}:\n    return \"${{ inputs.statement_u }}\""; fi
+        if [[ "${{ inputs.case_v }}" ]]; then echo -e "  case ${{ inputs.case_v }}:\n    return \"${{ inputs.statement_v }}\""; fi
+        if [[ "${{ inputs.case_w }}" ]]; then echo -e "  case ${{ inputs.case_w }}:\n    return \"${{ inputs.statement_w }}\""; fi
+        if [[ "${{ inputs.case_x }}" ]]; then echo -e "  case ${{ inputs.case_x }}:\n    return \"${{ inputs.statement_x }}\""; fi
+        if [[ "${{ inputs.case_y }}" ]]; then echo -e "  case ${{ inputs.case_y }}:\n    return \"${{ inputs.statement_y }}\""; fi
+        if [[ "${{ inputs.case_z }}" ]]; then echo -e "  case ${{ inputs.case_z }}:\n    return \"${{ inputs.statement_z }}\""; fi
+        if [[ "${{ inputs.default }}" ]]; then echo -e "  default:\n    return \"${{ inputs.default }}\""; fi
+        echo "}"
+      shell: bash
+      id: visualization
+
+    - run: |
+        if [[ ${{ inputs.expression == inputs.case_a }} == true ]]; then VALUE="${{ inputs.statement_a }}"
+        elif [[ ${{ inputs.expression == inputs.case_b }} == true ]]; then VALUE="${{ inputs.statement_b }}"
+        elif [[ ${{ inputs.expression == inputs.case_c }} == true ]]; then VALUE="${{ inputs.statement_c }}"
+        elif [[ ${{ inputs.expression == inputs.case_d }} == true ]]; then VALUE="${{ inputs.statement_d }}"
+        elif [[ ${{ inputs.expression == inputs.case_e }} == true ]]; then VALUE="${{ inputs.statement_e }}"
+        elif [[ ${{ inputs.expression == inputs.case_f }} == true ]]; then VALUE="${{ inputs.statement_f }}"
+        elif [[ ${{ inputs.expression == inputs.case_g }} == true ]]; then VALUE="${{ inputs.statement_g }}"
+        elif [[ ${{ inputs.expression == inputs.case_h }} == true ]]; then VALUE="${{ inputs.statement_h }}"
+        elif [[ ${{ inputs.expression == inputs.case_i }} == true ]]; then VALUE="${{ inputs.statement_i }}"
+        elif [[ ${{ inputs.expression == inputs.case_j }} == true ]]; then VALUE="${{ inputs.statement_j }}"
+        elif [[ ${{ inputs.expression == inputs.case_k }} == true ]]; then VALUE="${{ inputs.statement_k }}"
+        elif [[ ${{ inputs.expression == inputs.case_l }} == true ]]; then VALUE="${{ inputs.statement_l }}"
+        elif [[ ${{ inputs.expression == inputs.case_m }} == true ]]; then VALUE="${{ inputs.statement_m }}"
+        elif [[ ${{ inputs.expression == inputs.case_n }} == true ]]; then VALUE="${{ inputs.statement_n }}"
+        elif [[ ${{ inputs.expression == inputs.case_o }} == true ]]; then VALUE="${{ inputs.statement_o }}"
+        elif [[ ${{ inputs.expression == inputs.case_p }} == true ]]; then VALUE="${{ inputs.statement_p }}"
+        elif [[ ${{ inputs.expression == inputs.case_q }} == true ]]; then VALUE="${{ inputs.statement_q }}"
+        elif [[ ${{ inputs.expression == inputs.case_r }} == true ]]; then VALUE="${{ inputs.statement_r }}"
+        elif [[ ${{ inputs.expression == inputs.case_s }} == true ]]; then VALUE="${{ inputs.statement_s }}"
+        elif [[ ${{ inputs.expression == inputs.case_t }} == true ]]; then VALUE="${{ inputs.statement_t }}"
+        elif [[ ${{ inputs.expression == inputs.case_u }} == true ]]; then VALUE="${{ inputs.statement_u }}"
+        elif [[ ${{ inputs.expression == inputs.case_v }} == true ]]; then VALUE="${{ inputs.statement_v }}"
+        elif [[ ${{ inputs.expression == inputs.case_w }} == true ]]; then VALUE="${{ inputs.statement_w }}"
+        elif [[ ${{ inputs.expression == inputs.case_x }} == true ]]; then VALUE="${{ inputs.statement_x }}"
+        elif [[ ${{ inputs.expression == inputs.case_y }} == true ]]; then VALUE="${{ inputs.statement_y }}"
+        elif [[ ${{ inputs.expression == inputs.case_z }} == true ]]; then VALUE="${{ inputs.statement_z }}"
+        elif [[ "${{ inputs.default }}" ]]; then VALUE="${{ inputs.default }}"
+        fi
+
+        echo "Value: $VALUE"
+        echo "::set-output name=value::$VALUE"
+      shell: bash
+      id: value

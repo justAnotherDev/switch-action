@@ -1,0 +1,78 @@
+name: Test Funtionality
+on: push
+
+jobs:
+  true_false_case:
+    strategy:
+      matrix:
+        os: ['macos-latest', 'ubuntu-latest']
+    runs-on: ${{ matrix.os }}
+    name: True/False Case
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        id: switch
+        with:
+          expression: ${{ job.status != 'failure' }}
+          case_a: true
+          statement_a: happy
+          case_b: false
+          statement_b: sad
+
+      - name: Confirm Value
+        run: |
+          if [[ "${{ steps.switch.outputs.value }}" != happy ]]; then 
+            echo "Unexepected Result: ${{ steps.switch.outputs.value }}"
+            exit 1
+          fi
+
+  tuple_case:
+    strategy:
+      matrix:
+        os: ['macos-latest', 'ubuntu-latest']
+    runs-on: ${{ matrix.os }}
+    name: Tuple Case
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        id: switch
+        with:
+          expression: (${{ job.status == 'failure' }}, ${{ github.ref == 'master' }})
+          case_a: (true, true)
+          statement_a: a job failed on master!
+          case_b: (true, false)
+          statement_b: a job failed on some branch.
+          default: the job succeeded
+
+      - run: |
+          if [[ "${{ steps.switch.outputs.value }}" != "the job succeeded" ]]; then 
+            echo "Unexepected Result: ${{ steps.switch.outputs.value }}"
+            exit 1
+          fi
+
+  string_case:
+    strategy:
+      matrix:
+        os: ['macos-latest', 'ubuntu-latest']
+    runs-on: ${{ matrix.os }}
+    name: String Case
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        id: switch
+        with:
+          expression: ${{ job.status }}
+          case_a: success
+          statement_a: happy
+          case_b: failure
+          statement_b: sad
+          case_c: cancelled
+          statement_c: tbd
+          default: pensive
+
+      - run: |
+          if [[ "${{ steps.switch.outputs.value }}" != happy ]]; then 
+            echo "Unexepected Result: ${{ steps.switch.outputs.value }}"
+            exit 1
+          fi
+
